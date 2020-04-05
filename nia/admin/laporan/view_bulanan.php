@@ -51,6 +51,7 @@ if (empty($_SESSION['username']) AND
             <div class="card-header">
               <h3 class="card-title">DATA </h3> <br><br>
               <a href='add.php' class='btn btn-primary'>TAMBAH DATA</a>
+              <a href='print.php' class='btn btn-primary'>Print</a>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
@@ -81,8 +82,7 @@ if (empty($_SESSION['username']) AND
                 <tbody>
 
                 <?php 
-                $th="2020";
-                $queri ="SELECT YEAR(tgl_laporan)  FROM laporan  ";
+                $queri ="SELECT*FROM laporan WHERE tgl_laporan order by tgl_laporan  ";
                 $hasil =mysqli_query($koneksi,$queri);
                 $no = 1;
                 while ($kolom=mysqli_fetch_assoc($hasil)) {
