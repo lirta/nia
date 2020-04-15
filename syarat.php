@@ -76,13 +76,18 @@
                                             <ul>
                                             <?php 
                                             $qsyarat =mysqli_query($koneksi,"SELECT * FROM syarat WHERE jenis_akta='$_GET[id]' ");
+                                            $rsyarat=mysqli_fetch_row($qsyarat);
                                             while ($syarat=mysqli_fetch_assoc($qsyarat)) {
                                               echo "<li>$syarat[syarat] </li>"  ;  
                                              } ?>
                                             </ul>
                                             
                                         </p> <br>
-                                        <?php echo "<a href='pengajuan.php?id=$_GET[id]' type='button' class='btn btn-primary btn-lg' >Ajukan Permohonan</a>"; ?>
+                                        <?php
+                                        if (!empty($rsyarat)) {
+                                             echo "<a href='pengajuan.php?id=$_GET[id]' type='button' class='btn btn-primary btn-lg' >Ajukan Permohonan</a>";
+                                         } 
+                                           ?>
                                     </div>
                                 </div>
                             </div>

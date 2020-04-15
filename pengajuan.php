@@ -87,7 +87,7 @@
                                     <input class="form-control margin-bottom-20" type="text" value="<?php echo"$syarat[id_syarat]"; ?>" name="sya[]">
                                     </div>
                                 </div>
-                                <div class="row" hidden="">
+                                <div class="row" >
                                     <div class="col-sm-12">
                                     <label><?php echo"$syarat[syarat]"; ?>
                                         <span class="color-red">*</span>
@@ -96,7 +96,7 @@
                                     </div>
                                 </div>
                                 <?php } ?>
-                                <input type="text" name="jml" value="<?php echo "$jml"; ?>">
+                                <input type="hidden" name="jml" value="<?php echo "$jml"; ?>">
                             
                             <hr>
                             <div class="row">
