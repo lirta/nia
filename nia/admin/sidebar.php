@@ -28,7 +28,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="../arsip/view.php" class="nav-link">
+            <a href="arsip/view.php" class="nav-link">
               <i class="nav-icon fas fa-edit"></i>
               <p>
                 Arsip Akta
