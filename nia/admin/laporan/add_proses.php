@@ -1,8 +1,14 @@
 <?php
 include "../../pages/coneksi/config.php";
 
-$date= date("d/m/Y");
-$querii="INSERT INTO laporan ( no_akta,
+$date = date("Y-m-d");
+$tgll =  $_POST['tgl'];
+$tgl = explode('/', $_POST['tgl_akta']);
+$t = $tgl[2];
+$b = $tgl[1];
+$m = $tgl[0];
+$j = $t . '-' . $b . '-' . $m;
+$querii = "INSERT INTO laporan ( no_akta,
 							tgl_akta,
 							bentuk_hukum,
 							nama_penjual,
@@ -22,7 +28,7 @@ $querii="INSERT INTO laporan ( no_akta,
 							tgl_laporan) 
 							values 
 							('$_POST[n_akta]',
-							'$_POST[tgl_akta]',
+							'$j',
 							'$_POST[bph]',
 							'$_POST[pmb]',
 							'$_POST[pmn]',
@@ -39,7 +45,6 @@ $querii="INSERT INTO laporan ( no_akta,
 							'$_POST[rpsb]',
 							'$_POST[ket]',
 							'$date')";
-mysqli_query($koneksi,$querii);
+mysqli_query($koneksi, $querii);
 mysqli_close($koneksi);
 header('location:view.php');
-?>
