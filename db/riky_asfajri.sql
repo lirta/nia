@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 05, 2020 at 01:34 PM
+-- Generation Time: Jul 07, 2020 at 10:39 PM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.3
 
@@ -59,7 +59,8 @@ CREATE TABLE `arsip` (
 
 INSERT INTO `arsip` (`id_arsip`, `no_akta`, `berkas`) VALUES
 (1, '12312', '82069127loginkariawan.png'),
-(2, '11111nn', '165512743D-Action-Games-HD-Wallpaper.jpg');
+(2, '11111nn', '165512743D-Action-Games-HD-Wallpaper.jpg'),
+(3, '2222111', '50862765classDiagram.jpg');
 
 -- --------------------------------------------------------
 
@@ -109,7 +110,8 @@ INSERT INTO `jenis_akta` (`id_jenis_akta`, `nama_akta`) VALUES
 (5, 'AKTA PEMBAGIAN HAK BERSAMA'),
 (6, 'AKTA PEMBERIAN HAK TANGGUNGAN'),
 (7, 'AKTA PEMBERIAN HAK GUNA BANGUNAN/HAK PAKAI DI ATAS TANAH HAK MILIK'),
-(8, 'SURAT KUASA MEMBEBANKAN HAK TANGGUNGAN');
+(8, 'SURAT KUASA MEMBEBANKAN HAK TANGGUNGAN'),
+(9, 'akta hibah');
 
 -- --------------------------------------------------------
 
@@ -120,7 +122,7 @@ INSERT INTO `jenis_akta` (`id_jenis_akta`, `nama_akta`) VALUES
 CREATE TABLE `laporan` (
   `id_laporan` int(11) NOT NULL,
   `no_akta` varchar(125) NOT NULL,
-  `tgl_akta` varchar(40) NOT NULL,
+  `tgl_akta` date NOT NULL,
   `bentuk_hukum` varchar(15) NOT NULL,
   `nama_penjual` varchar(50) NOT NULL,
   `nama_pembeli` varchar(50) NOT NULL,
@@ -144,8 +146,9 @@ CREATE TABLE `laporan` (
 --
 
 INSERT INTO `laporan` (`id_laporan`, `no_akta`, `tgl_akta`, `bentuk_hukum`, `nama_penjual`, `nama_pembeli`, `no_sertifikat`, `alamat_tanah`, `luas_tanah`, `luas_bangunan`, `harga_peralihan_hak`, `nop_tahun`, `njop`, `tgl_ssp`, `h_ssp`, `tgl_ssb`, `h_ssb`, `keterangan`, `tgl_laporan`) VALUES
-(1, '123 ', '10/02/2020', 'hp cv', 'inda', 'lirta', '111', 'pku', 200, 100, 10000000, 2020, 191, '12/12/2019', 100000, '12/12/2019', 100000, 'ijijijijiji', '04/04/2020'),
-(3, '2222', '', '', '', '', '', '', 0, 0, 0, 0, 0, '', 0, '', 0, '', '02/03/2019');
+(7, '123', '0000-00-00', '', '', '', '', '', 0, 0, 0, 0, 0, '', 0, '', 0, '', '2020-07-07'),
+(8, '2222', '0000-00-00', '', '', '', '', '', 0, 0, 0, 0, 0, '', 0, '', 0, '', '2020-06-07'),
+(9, '', '0000-00-00', '', '', '', '', '', 0, 0, 0, 0, 0, '', 0, '', 0, '', '2020-07-07');
 
 -- --------------------------------------------------------
 
@@ -168,7 +171,7 @@ CREATE TABLE `permohonan` (
 --
 
 INSERT INTO `permohonan` (`id_permohonan`, `tgl_pengajuan`, `jenis_akta`, `nama`, `hp`, `alamat`, `status`) VALUES
-(39640273, '02/04/2020', 5, 'gentho', '0320853275025', 'Jl. Parmata', 'PERMOHONAN');
+(39640273, '02/04/2020', 5, 'gentho', '0320853275025', 'Jl. Parmata', 'PROSES');
 
 -- --------------------------------------------------------
 
@@ -261,7 +264,7 @@ ALTER TABLE `syarat`
 -- AUTO_INCREMENT for table `arsip`
 --
 ALTER TABLE `arsip`
-  MODIFY `id_arsip` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_arsip` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `file_permohonan`
@@ -273,13 +276,13 @@ ALTER TABLE `file_permohonan`
 -- AUTO_INCREMENT for table `jenis_akta`
 --
 ALTER TABLE `jenis_akta`
-  MODIFY `id_jenis_akta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_jenis_akta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `laporan`
 --
 ALTER TABLE `laporan`
-  MODIFY `id_laporan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_laporan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `syarat`
